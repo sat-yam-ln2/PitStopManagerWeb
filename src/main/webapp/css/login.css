@@ -1,0 +1,223 @@
+/* Login and Registration specific styles */
+body {
+  background: linear-gradient(-45deg, var(--racing-red), var(--dark-charcoal), var(--racing-blue), var(--dark-charcoal));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--racing-blue) 0%, transparent 70%);
+  opacity: 0.15;
+  animation: rotate 30s ease-in-out infinite;
+  filter: blur(20px);
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.auth-card {
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  max-width: 450px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--racing-red), var(--racing-blue));
+  z-index: 2;
+}
+
+.auth-header {
+  background: rgba(21, 21, 30, 0.95);
+  padding: 25px 30px;
+  text-align: center;
+}
+
+.auth-header h2 {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.auth-header p {
+  color: var(--silver-gray);
+  font-size: 0.9rem;
+}
+
+.auth-body {
+  padding: 30px;
+}
+
+.auth-form .form-group {
+  margin-bottom: 25px;
+}
+
+.auth-form .form-control {
+  background-color: rgba(249, 249, 249, 0.9);
+  border: 1px solid rgba(224, 224, 224, 0.8);
+  backdrop-filter: blur(4px);
+  padding: 15px;
+  font-size: 1rem;
+}
+
+.auth-form .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: var(--racing-blue);
+  box-shadow: 0 0 0 3px rgba(0, 144, 255, 0.2);
+}
+
+.auth-form .btn {
+  background: linear-gradient(90deg, var(--racing-red), #ff1a1a);
+  border: none;
+  box-shadow: 0 4px 15px rgba(225, 6, 0, 0.3);
+  width: 100%;
+  margin-top: 10px;
+}
+
+.auth-form .btn:hover {
+  background: linear-gradient(90deg, #ff1a1a, var(--racing-red));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(225, 6, 0, 0.4);
+}
+
+/* Add ambient light effect */
+.auth-container::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--racing-red) 0%, transparent 60%);
+  border-radius: 50%;
+  top: -300px;
+  right: -300px;
+  opacity: 0.1;
+  filter: blur(30px);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.15; transform: scale(1.1); }
+  100% { opacity: 0.1; transform: scale(1); }
+}
+
+/* Extra ambient light from the left */
+.auth-container .ambient-light {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--racing-blue) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -200px;
+  left: -200px;
+  opacity: 0.1;
+  filter: blur(30px);
+  animation: pulse 10s ease-in-out infinite reverse;
+}
+
+.checkmark-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  color: rgba(85, 85, 85, 0.9);
+}
+
+.checkmark-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.checkmark-container:hover input ~ .checkmark {
+  background-color: #e0e0e0;
+}
+
+.checkmark-container input:checked ~ .checkmark {
+  background-color: var(--racing-blue);
+  border-color: var(--racing-blue);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkmark-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.center-text {
+  text-align: center;
+}
