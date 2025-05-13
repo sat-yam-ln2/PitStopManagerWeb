@@ -67,4 +67,41 @@ To develop a secure and centralized application that efficiently manages all asp
 ---
 
 ## 📁 Project Structure
+---
 
+## 🔐 User Roles
+
+- **Admin:** Full access to all CRUD functionalities and dashboards.
+- **User:** Can view drivers and market value, but with limited access to admin controls.
+
+---
+
+## 🏁 How to Run
+
+1. Clone or download the repository.
+2. Import it into **Eclipse IDE** as a **Dynamic Web Project**.
+3. Set up your database (MySQL or equivalent) and update DB connection settings in the DAO/config files.
+4. Deploy the project using **Apache Tomcat**.
+5. Access the app via: `http://localhost:8080/PitStopManager/`
+
+---
+
+## ✅ Future Improvements
+
+- Add analytics and performance charts for drivers.
+- Email notifications for expiring contracts.
+- API integration for live F1 stats.
+
+---
+
+## 📄 License
+
+This project is for academic and learning purposes. Feel free to fork and build upon it with proper attribution.
+
+---
+
+## 🙌 Acknowledgments
+
+Special thanks to mentors, peers, and the F1 community for inspiration and guidance in the development of this project.
+
+---
