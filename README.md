@@ -66,9 +66,6 @@ To develop a secure and centralized application that efficiently manages all asp
 
 ---
 
-## 📁 Project Structure
----
-
 ## 🔐 User Roles
 
 - **Admin:** Full access to all CRUD functionalities and dashboards.
