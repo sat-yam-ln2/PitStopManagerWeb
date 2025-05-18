@@ -10,6 +10,11 @@ public class Contract {
     private LocalDate endDate;
     private double transferFee;
 
+    // Add these new fields
+    private String driverName;
+    private String startDateStr;
+    private String endDateStr;
+
     // Getters and Setters
     public int getContractId() { return contractId; }
     public void setContractId(int contractId) { this.contractId = contractId; }
@@ -25,6 +30,16 @@ public class Contract {
 
     public double getTransferFee() { return transferFee; }
     public void setTransferFee(double transferFee) { this.transferFee = transferFee; }
+
+    // Add getters and setters for new fields
+    public String getDriverName() { return driverName; }
+    public void setDriverName(String driverName) { this.driverName = driverName; }
+
+    public String getStartDateStr() { return startDateStr; }
+    public void setStartDateStr(String startDateStr) { this.startDateStr = startDateStr; }
+
+    public String getEndDateStr() { return endDateStr; }
+    public void setEndDateStr(String endDateStr) { this.endDateStr = endDateStr; }
 
     // Add these new methods for formatted date strings
     public String getStartDateAsString() {

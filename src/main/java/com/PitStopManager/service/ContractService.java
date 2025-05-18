@@ -1,12 +1,13 @@
 package com.PitStopManager.service;
 
-import com.PitStopManager.config.DbConfig;
-import com.PitStopManager.model.Contract;
-
 import java.sql.*;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.PitStopManager.config.DbConfig;
+import com.PitStopManager.model.Contract;
 
 public class ContractService {
 
@@ -21,12 +22,14 @@ public class ContractService {
                 Contract contract = new Contract();
                 contract.setContractId(rs.getInt("ContractID"));
                 contract.setDriverId(rs.getInt("DriverID"));
-                contract.setStartDate(rs.getDate("StartDate").toLocalDate());
-                contract.setEndDate(rs.getDate("EndDate").toLocalDate());
+                LocalDate startDate = rs.getDate("StartDate").toLocalDate();
+                LocalDate endDate = rs.getDate("EndDate").toLocalDate();
+                contract.setStartDate(startDate);
+                contract.setEndDate(endDate);
                 contract.setTransferFee(rs.getDouble("TransferFee"));
                 contract.setDriverName(rs.getString("DriverName"));
-                contract.setStartDateStr(contract.getStartDate().format(formatter));
-                contract.setEndDateStr(contract.getEndDate().format(formatter));
+                contract.setStartDateStr(startDate.format(formatter));
+                contract.setEndDateStr(endDate.format(formatter));
                 contracts.add(contract);
             }
         }
