@@ -1,0 +1,86 @@
+.teams-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+.teams-title {
+    color: var(--racing-red);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.team-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.team-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 16px 48px rgba(225,6,0,0.15);
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.team-icon {
+    font-size: 2.5rem;
+    color: var(--racing-blue);
+    background: rgba(0,144,255,0.08);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.team-name {
+    font-size: 1.5rem;
+    color: var(--dark-charcoal);
+    font-weight: 700;
+    margin: 0;
+}
+
+.team-details {
+    color: var(--dark-charcoal);
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+}
+
+.team-details strong {
+    color: var(--racing-red);
+    font-weight: 600;
+}
+
+.empty-state {
+    grid-column: 1/-1;
+    text-align: center;
+    color: var(--racing-red);
+    font-size: 1.2rem;
+    padding: 2rem 0;
+}
+
+@media (max-width: 900px) {
+    .teams-container { padding: 1rem; }
+    .teams-title { font-size: 1.5rem; }
+    .teams-grid { grid-template-columns: 1fr; }
+}
