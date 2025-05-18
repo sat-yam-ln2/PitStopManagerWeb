@@ -27,11 +27,11 @@ public class Contract {
     public void setTransferFee(double transferFee) { this.transferFee = transferFee; }
 
     // Add these new methods for formatted date strings
-    public String getStartDate() {
+    public String getStartDateAsString() {
         return startDate != null ? startDate.toString() : "";
     }
 
-    public String getEndDate() {
+    public String getEndDateAsString() {
         return endDate != null ? endDate.toString() : "";
     }
 
