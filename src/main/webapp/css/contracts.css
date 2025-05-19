@@ -1,0 +1,114 @@
+body {
+    background: linear-gradient(-45deg, var(--racing-red), var(--dark-charcoal), var(--racing-blue), var(--dark-charcoal));
+    background-size: 400% 400%;
+    animation: gradientBG 30s ease infinite;
+    min-height: 100vh;
+}
+
+.contracts-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(255,255,255,0.92);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.contracts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.contracts-header h2 {
+    color: var(--racing-red);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-bar input[type="text"] {
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    min-width: 220px;
+    background: #fff;
+    transition: border 0.3s;
+}
+
+.search-bar input[type="text"]:focus {
+    border: 1.5px solid var(--racing-red);
+    outline: none;
+}
+
+.search-bar button {
+    background: var(--racing-red);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background: var(--racing-blue);
+}
+
+.contracts-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(255,255,255,0.98);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+.contracts-table th, .contracts-table td {
+    padding: 1rem 1.2rem;
+    text-align: left;
+}
+
+.contracts-table th {
+    background: var(--dark-charcoal);
+    color: var(--white);
+    font-weight: 600;
+    border-bottom: 2px solid var(--racing-red);
+}
+
+.contracts-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.contracts-table tr:hover {
+    background: #f1f7ff;
+}
+
+.contracts-table td {
+    color: var(--dark-charcoal);
+    font-size: 1rem;
+}
+
+.contracts-table td.fee {
+    color: var(--racing-red);
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .contracts-container { padding: 1rem; }
+    .contracts-header { flex-direction: column; gap: 1rem; }
+    .contracts-table th, .contracts-table td { padding: 0.7rem 0.5rem; }
+}
+@media (max-width: 600px) {
+    .contracts-header h2 { font-size: 1.2rem; }
+    .contracts-table { font-size: 0.95rem; }
+}
